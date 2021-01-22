@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
+# Selects First Wallpaper on wallhaven.cc search critera, downloads to path specified in "path" variable and sets wallpaper
+# using either pywal or feh, uncomment as required.
 
-path=~/Pictures/WP/script/
+# &sorting=random within URL will ensure you always get a different wallpaper each refresh, recommend going to wallhaven.cc
+# to set your search criteria then copy url outputted from search to the "url" variable
+
+# (DO NOT SET "PATH" TO A FOLDER WITH OTHER ITEMS, ITEMS ARE REMOVED/FORCED EACH RUN TO AVOID BLOAT OF OLD IMAGES)
+# (IF YOU WISH TO KEEP ALL OLD WALLPAPERS IN FOLDER THEN REMOVE LINE "rm -rf $path*"
+
+path=~/Pictures/WP
 rm -rf $path*
 url='https://wallhaven.cc/search?categories=010&purity=100&resolutions=1920x1080&sorting=random&order=desc'
 html=$( curl -# -L "${url}" 2> '/dev/null' )
