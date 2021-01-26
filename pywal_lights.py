@@ -12,6 +12,7 @@ def hex_to_rgb(value):
         return list(int(value[i:i+2], 16) for i in (0, 2, 4))
 
 #Primary Light Colour
+#hexlist[0] = color0 hexlist[1] = color1 and so on for terminal colours.
 rgbp = hex_to_rgb(hexlist[1])
 #Secondary Light Colour
 rgbs = hex_to_rgb(hexlist[2])
